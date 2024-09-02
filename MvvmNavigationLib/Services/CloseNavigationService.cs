@@ -2,19 +2,9 @@
 
 namespace MvvmNavigationLib.Services
 {
-    public class CloseNavigationService<TNavigationStore>:INavigationService
-    where TNavigationStore: INavigationStore
+    public class CloseNavigationService<TNavigationStore>(TNavigationStore navigationStore) : INavigationService
+        where TNavigationStore: INavigationStore
     {
-        private readonly TNavigationStore _navigationStore;
-
-        public CloseNavigationService(TNavigationStore navigationStore)
-        {
-            _navigationStore = navigationStore;
-        }
-
-        public void Navigate()
-        {
-            _navigationStore.CurrentViewModel = null;
-        }
+        public void Navigate()=>navigationStore.CurrentViewModel = null;
     }
 }

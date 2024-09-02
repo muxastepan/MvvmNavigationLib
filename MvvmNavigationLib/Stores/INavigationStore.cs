@@ -5,7 +5,7 @@ namespace MvvmNavigationLib.Stores;
 
 public interface INavigationStore
 {
-    ObservableObject CurrentViewModel { set; }
+    ObservableObject? CurrentViewModel { set; }
     StackQueue<ObservableObject> RecentViewModels { set; }
 
     void GoBack();
